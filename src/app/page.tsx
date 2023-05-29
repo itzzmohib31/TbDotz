@@ -4,7 +4,11 @@ import Navigation from './components/Navbar'
 import { useState,useEffect } from 'react';
 import HeroSection from './components/HeroSection';
 import Visions from './components/Visions';
+import Testimonials from './components/Testimonials';
 import Timeline from './components/Timeline';
+import Services from './components/Services';
+import ContactForm from './components/ContactForm';
+import Offerings from './components/Offerings/Offerings';
 export default function Home() {
 
   const [theme,setTheme]=useState('light');
@@ -36,8 +40,11 @@ export default function Home() {
     <main className='dark:bg-black dark:text-white '>
     <Navigation theme={themeSwitch}></Navigation>
     <HeroSection></HeroSection>
+    <Offerings></Offerings>
     <Timeline/>
     <Visions></Visions>
+    <Services></Services>
+    <ContactForm></ContactForm>
     </main>
   )
 }

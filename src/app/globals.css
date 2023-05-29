@@ -28,3 +28,43 @@ body {
     margin: auto;
   }
 } */
+
+
+
+
+
+
+
+
+
+
+
+@keyframes myAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes myAnimation2 {
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.mainhead1 {
+  animation: myAnimation 1s ease-in;
+}
+.mainhead2 {
+  animation: myAnimation 1s ease-in;
+}

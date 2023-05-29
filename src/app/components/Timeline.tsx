@@ -44,7 +44,7 @@ const Timeline=()=>{
                          <div className='flex justify-center text-2xl items-center '>
                          <div className='w-1/4 hidden md:block'>
                              <p className="text-center p-4" style={{border:'2px solid #005cff',borderRadius:'10rem',width:'60px',height:'60px'}}>{index+1}</p>
-                             <div style={{left:'19%', borderLeft:'2px solid ',height:'13%',position:'absolute',margin:'auto'}} ></div>
+                             <div style={{left:'19%', borderLeft:'2px solid ',height:'10%',position:'absolute',margin:'auto'}} ></div>
                         </div>
 
 

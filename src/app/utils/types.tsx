@@ -44,3 +44,19 @@ export type servicePageType = {
     SecondaryPara:any
 
 }[]
+
+
+
+
+
+export type ServiceListType={
+    title:string,
+    link:string
+
+}
+export type OfferingTypes={
+    id:number,
+    title:string,
+    desc:string,
+    list:Array<ServiceListType>
+}
