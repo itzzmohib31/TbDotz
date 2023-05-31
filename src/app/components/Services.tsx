@@ -13,7 +13,7 @@ const Services = () => {
    <div className='grid md:grid-cols-3 gap-y-4  md:w-4/5 m-auto mt-5 ' >
             {ServiceList.map((e,index)=>{
                 return( 
-                    <div key={index} className=" md:h-56 items-center m-auto w-4/5 w bg-blue text-white p-5 shadow rounded">
+                    <div key={index} className=" md:h-60 items-center m-auto w-4/5 w bg-blue text-white p-5 shadow rounded">
                         <Image
                          src={e.img}
                          alt={'Serice'+index}

@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@react-three/drei": "^9.69.1",
     "@react-three/fiber": "^8.13.0",
     "@types/node": "20.2.3",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
+    "@types/react-slick": "^0.23.10",
     "autoprefixer": "10.4.14",
+    "emailjs": "^4.0.2",
     "maath": "^0.5.3",
     "next": "13.4.3",
     "postcss": "8.4.23",

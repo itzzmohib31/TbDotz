@@ -3,13 +3,12 @@
 import React, { ReactElement } from "react";
 import { menuList } from "../utils/menu-list";
 import Link from 'next/link';
-import Image from 'next/image';
 import Logo from '../assets/logo.svg';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from "react";
 import { FaAffiliatetheme } from "react-icons/fa";
-
+import Image from "next/image";
 const Navigation =(props:any)=>{
 
     

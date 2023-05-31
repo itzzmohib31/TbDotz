@@ -31,7 +31,7 @@ const OfferingsMobile = () => {
                     <ul className="md:grid grid-cols-2 mt-5 p-4" >
                     {e.list.map((e,index)=>{
                        return(
-                        <li className="md:p-4 list-disc text-l md:text-xl">{e.title}</li>
+                        <li key={index} className="md:p-4 list-disc text-l md:text-xl">{e.title}</li>
                        )
                     })}
                 </ul>

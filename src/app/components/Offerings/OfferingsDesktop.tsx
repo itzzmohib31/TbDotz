@@ -18,7 +18,7 @@ const OfferingsDesktop=()=>{
             <div className=" w-full md:w-1/5 p-6 bg-blue text-white shadow rounded">
             {OfferingList.map((e,index)=>{
                 return(
-                    <p className="w-full text-xl mt-6 cursor-pointer"  onClick={()=>ServiceChangeHandler(e)} >{e.title}</p>
+                    <p key={index} className="w-full text-xl mt-6 cursor-pointer"  onClick={()=>ServiceChangeHandler(e)} >{e.title}</p>
                 )
             })}
             </div>
@@ -29,7 +29,7 @@ const OfferingsDesktop=()=>{
                 <ul className="md:grid grid-cols-2 mt-5 p-4" >
                     {selectedService.list.map((e,index)=>{
                        return(
-                        <li className="md:p-4 list-disc text-l md:text-xl">{e.title}</li>
+                        <li key={index} className="md:p-4 list-disc text-l md:text-xl">{e.title}</li>
                        )
                     })}
                 </ul>

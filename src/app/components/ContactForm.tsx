@@ -1,20 +1,46 @@
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const ContactForm=()=>{
+    const form = useRef();
+
+   
+
+    const sendEmail = (e:any) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_7vgzs6q', 'template_b4lr9dl', form.current, 'ObdLC-mCGHjho92Tc')
+          .then((result:any) => {
+              console.log(result.text);
+          }, (error:any) => {
+              console.log(error.text);
+          });
+
+          emailjs.sendForm('service_7vgzs6q', 'template_ddvdfpk', form.current, 'ObdLC-mCGHjho92Tc')
+          .then((result:any) => {
+              console.log(result.text);
+          }, (error:any) => {
+              console.log(error.text);
+          });
+      };
+
 
     return(
 
-        <section className="w-4/5 m-auto md:flex justify-center h-80">
-<form  className='w-full h-full rounded bg-blue md:w-1/2 p-8 m-auto shadow pt-5 mt-5 text-white '>
-
+    <section className="w-4/5 m-auto md:flex justify-center h-96">
+<form ref={form}  onSubmit={sendEmail}   className='w-full h-full rounded bg-blue md:w-1/2 p-8 m-auto shadow pt-5 mt-5 text-white '>
 <div className="">
-<input style={{borderBottom:'1px solid white'}}   className="bg-blue w-full m-auto shadow  p-3  border-solid border-black text-white" placeholder="Your Email"></input>
+<input name="user_name" style={{borderBottom:'1px solid white'}}   className="bg-blue w-full m-auto shadow  p-3  border-solid border-black text-white" placeholder="Your Name"></input>
+</div>
+<div className="">
+<input name="user_email" style={{borderBottom:'1px solid white'}}   className="bg-blue w-full m-auto shadow  p-3  border-solid border-black text-white" placeholder="Your Email"></input>
 </div>
 <div className="mt-2">
-<textarea style={{border:'1px solid white',color:'white'}} rows={6} className="rounded border-solid border-orange bg-blue m-auto w-full p-3  border-solid border-black text-white" placeholder="Your Message"></textarea>
+<textarea name='message' style={{border:'1px solid white',color:'white'}} rows={6} className="rounded border-solid border-orange bg-blue m-auto w-full p-3  border-solid border-black text-white" placeholder="Your Message"></textarea>
 </div>
 <div className="">
-<button className="w-full m-auto bg-white text-black rounded shadow p-4 m-auto">Register</button>
-
+<input type={'submit'}  value='Send' className="w-full m-auto bg-white text-black rounded shadow p-4 m-auto"></input>
 </div>
 
 
@@ -33,7 +59,6 @@ const ContactForm=()=>{
 
 
         </section>
-
 
 
     )
