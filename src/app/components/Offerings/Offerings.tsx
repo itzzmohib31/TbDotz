@@ -1,9 +1,10 @@
+"use client"
 import OfferingsDesktop from "./OfferingsDesktop";
 import OfferingsMobile from "./OfferingsMobile";
 import { useState, useEffect } from "react";
 
 export const Offerings = () => {
-  const [variant, setVariant] = useState(window.innerWidth);
+  const [variant, setVariant] = useState<number>();
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,7 +20,7 @@ export const Offerings = () => {
 
   return (
     <div key={variant}>
-      {variant <= 768 ? <OfferingsMobile /> : <OfferingsDesktop />}
+      {variant&&variant <= 768 ? <OfferingsMobile /> : <OfferingsDesktop />}
     </div>
   );
 };

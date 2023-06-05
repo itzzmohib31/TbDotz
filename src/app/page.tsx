@@ -1,8 +1,7 @@
-"use client";
-// @ts-ignore
-import Image from 'next/image'
-import Navigation from './components/Navbar'
-import { useState,useEffect } from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Navigation from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import Visions from './components/Visions';
 import Testimonials from './components/Testimonials';
@@ -12,40 +11,38 @@ import ContactForm from './components/ContactForm';
 import Offerings from './components/Offerings/Offerings';
 
 export default function Home() {
-  const currentTheme = localStorage.getItem("Theme") ?? "light";
-
-  const [theme, setTheme] = useState(currentTheme);
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
+    const currentTheme = localStorage.getItem('Theme') || 'light';
+    setTheme(currentTheme);
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
     }
   }, []);
 
   useEffect(() => {
-    if (currentTheme === "dark") {
-      document.documentElement.classList.add("dark");
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
-  }, [currentTheme]);
+    localStorage.setItem('Theme', theme);
+  }, [theme]);
 
   const themeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-    localStorage.setItem("Theme", theme);
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
-    <main className="dark:bg-black dark:text-white ">
-      <Navigation theme={themeSwitch}></Navigation>
-      <HeroSection></HeroSection>
-      <Offerings></Offerings>
+    <main className={theme === 'dark' ? 'dark bg-black text-white' : ''}>
+      <Navigation theme={themeSwitch} />
+      <HeroSection />
+      <Offerings />
       <Timeline />
-      <Visions></Visions>
-      <Services></Services>
-      <ContactForm></ContactForm>
+      <Visions />
+      <Services />
+      <ContactForm />
     </main>
   );
 }
