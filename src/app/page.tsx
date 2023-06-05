@@ -9,7 +9,7 @@ import ContactForm from './components/ContactForm';
 import Offerings from './components/Offerings/Offerings';
 
 export default function Home() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme'));
+  const [theme, setTheme] = useState('dark');
   const [isExpanded,setIsExpanded]=useState(false);
 
 
