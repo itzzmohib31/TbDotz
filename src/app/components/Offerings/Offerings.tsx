@@ -3,25 +3,30 @@ import OfferingsDesktop from "./OfferingsDesktop";
 import OfferingsMobile from "./OfferingsMobile";
 
 const Offerings = () => {
-  const [variant, setVariant] = useState<number | undefined>(undefined);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setVariant(window.innerWidth);
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener("resize", handleResize);
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
 
+    // Initial check on component mount
+    handleResize();
+
+    // Clean up event listener on component unmount
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  return (
-    <div key={variant}>
-      {variant && variant <= 768 ? <OfferingsMobile /> : <OfferingsDesktop />}
-    </div>
-  );
+  if (isMobile) {
+    return <OfferingsMobile/>
+  }
+
+  return <OfferingsDesktop/>
 };
 
 export default Offerings;

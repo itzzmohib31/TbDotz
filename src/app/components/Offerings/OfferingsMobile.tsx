@@ -22,7 +22,7 @@ const OfferingsMobile = () => {
 
 
 
-    <Slider {...settings} className='bg-orange shadow rounded p-2 md:p-12 text-white md:w-3/4 w-full'>
+    <Slider {...settings} className='shadow rounded p-2 md:p-12 text-white md:w-3/4 w-full'>
             {OfferingList.map((e,index)=>{
                 return(
                     <div key={index} className='w-2 p-12 shadow rounded bg-orange' style={{width:'100px'}}>
