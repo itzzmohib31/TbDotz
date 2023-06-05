@@ -9,21 +9,21 @@ export const menuList:menuListType=[
 {
     name:'Services',
     link:'/',
-    isDropdown:true,
-    dropdownData:[
-        {
-            heading:'RL Tool',
-            url:'/RL Tool'
-        },
-        {
-            heading:'Validation Tool',
-            url:'/Validation Tool'
-        },
-    ]
+    isDropdown:false,
+    // dropdownData:[
+    //     {
+    //         heading:'RL Tool',
+    //         url:'/RL Tool'
+    //     },
+    //     {
+    //         heading:'Validation Tool',
+    //         url:'/Validation Tool'
+    //     },
+    // ]
 },
 {
-    name:'Tools',
-    link:'/LOM'
+    name:'Products',
+    link:'/'
 },
 {
     name:'About',
@@ -31,7 +31,7 @@ export const menuList:menuListType=[
 },
 {
     name:'Contact Us',
-    link:'/contactus'
+    link:'/'
 },
 
 
