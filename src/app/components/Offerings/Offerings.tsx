@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import OfferingsDesktop from "./OfferingsDesktop";
 import OfferingsMobile from "./OfferingsMobile";
 import CanvasLoader from "../fallback/CanvasLoader";
-
+import Loader from "../fallback/Loader";
 const Offerings = () => {
   const [windowWidth, setWindowWidth] = useState<number|null>(null);
   const isMobile = windowWidth && windowWidth <= 768;
@@ -21,7 +21,8 @@ const Offerings = () => {
   }, []);
 
   if (windowWidth === null) {
-    return <div>Loading...</div>
+    return <Loader/>
+
   }
 
   return (

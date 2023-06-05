@@ -1,11 +1,9 @@
 import { Html } from "@react-three/drei"
-
+import Loader from "./Loader";
 const CanvasLoader=()=>{
 return(
     <Html>
-     <div>
-        <h2>Loading.....</h2>
-    </div>
+     <Loader/>
     </Html>
    
 )

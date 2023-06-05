@@ -7,7 +7,7 @@ import Timeline from './components/Timeline';
 import Services from './components/Services';
 import ContactForm from './components/ContactForm';
 import Offerings from './components/Offerings/Offerings';
-
+import Loader from './components/fallback/Loader';
 export default function Home() {
   const [theme, setTheme] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
@@ -36,7 +36,7 @@ export default function Home() {
   };
 
   if (isLoading) {
-    return <div>...Loading</div>; // or you can render a loading indicator
+    return <Loader/>
   }
 
   return (
