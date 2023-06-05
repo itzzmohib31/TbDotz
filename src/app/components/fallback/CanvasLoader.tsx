@@ -3,7 +3,7 @@ import Loader from "./Loader";
 const CanvasLoader=()=>{
 return(
     <Html>
-     <Loader/>
+     <div>...Loading</div>
     </Html>
    
 )
