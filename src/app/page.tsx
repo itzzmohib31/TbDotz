@@ -9,7 +9,10 @@ import ContactForm from './components/ContactForm';
 import Offerings from './components/Offerings/Offerings';
 
 export default function Home() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme'));
+  const [isExpanded,setIsExpanded]=useState(false);
+
+
 
   useEffect(() => {
     const currentTheme = localStorage.getItem('Theme') || 'light';
@@ -34,13 +37,16 @@ export default function Home() {
 
   return (
     <main className={theme === 'dark' ? 'dark bg-black text-white' : ''}>
-      <Navigation theme={themeSwitch} />
+      <Navigation theme={themeSwitch} isExpanded={setIsExpanded} />
+      {!isExpanded&&<div>
       <HeroSection />
       <Offerings />
       <Timeline />
       <Visions />
       <Services />
       <ContactForm />
+      </div>}
+      
     </main>
   );
 }

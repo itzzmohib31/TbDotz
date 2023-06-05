@@ -69,3 +69,36 @@ body {
   animation: myAnimation 1s ease-in;
 }
 
+
+
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes BottomTotop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media(max-width:800px)
+{
+  .nav {
+    animation: topToBottom 1s ease-in-out;
+  }
+  
+  
+}

@@ -32,6 +32,7 @@ const Navigation =(props:any)=>{
     const hamburgerToggle=()=>{
         (Expanded=='hidden')?setExpanded(''):setExpanded('hidden');
         !isOpened?setIsOpened(true):setIsOpened(false);
+        !isOpened?props.isExpanded(true):props.isExpanded(false);
     }
 
     return(
@@ -49,7 +50,7 @@ const Navigation =(props:any)=>{
             </div>
        
 
-            <nav className={` md:bg-White md:w-3/4 md:font-normal md:flex md:static md:top-0 md:text-md  top-19 right-0   bg-Gray  absolute w-full left-0 font-bold font-sans  text-lg p-1 ${Expanded}  transition-all ease-in duration-500`}>
+            <nav className={`nav md:bg-White md:w-3/4 md:font-normal md:flex md:static md:top-0 md:text-md  top-19 right-0   bg-Gray  absolute w-full left-0 font-bold font-sans  text-lg p-1 ${Expanded}  transition-all ease-in duration-500`}>
                 {menuList.map((item,index)=>{
                 return(
                     <li key={index} className="md:mx-4 list-none p-1 my-6 ">
