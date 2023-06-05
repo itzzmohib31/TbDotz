@@ -1,10 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Navigation from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import Visions from './components/Visions';
-import Testimonials from './components/Testimonials';
 import Timeline from './components/Timeline';
 import Services from './components/Services';
 import ContactForm from './components/ContactForm';

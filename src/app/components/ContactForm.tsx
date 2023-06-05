@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 
 
 const ContactForm=()=>{
-    const form = useRef();
+    const form = useRef<any>();
 
    
 

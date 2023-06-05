@@ -3,7 +3,6 @@
 import React, { ReactElement } from "react";
 import { menuList } from "../utils/menu-list";
 import Link from 'next/link';
-import Logo from '../assets/logo.svg';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from "react";
@@ -39,7 +38,7 @@ const Navigation =(props:any)=>{
         <header className="bg-White md:flex md:items-center justify-between ">
             <div className="p-1 flex justify-between items-center">
                 <Image
-                    src={Logo}
+                    src={'/Logo.svg'}
                     alt="TbDotz Logo"
                     width={100}
                     height={80}
