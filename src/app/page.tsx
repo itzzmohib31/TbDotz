@@ -38,14 +38,16 @@ export default function Home() {
   return (
     <main className={theme === 'dark' ? 'dark bg-black text-white' : ''}>
       <Navigation theme={themeSwitch} isExpanded={setIsExpanded} />
-      {!isExpanded&&<div>
+      
+ <div className={`page-content ${isExpanded ? 'hidden' : ''}`}>
       <HeroSection />
       <Offerings />
       <Timeline />
       <Visions />
       <Services />
       <ContactForm />
-      </div>}
+      </div>
+
       
     </main>
   );
