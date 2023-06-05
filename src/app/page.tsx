@@ -9,10 +9,9 @@ import ContactForm from './components/ContactForm';
 import Offerings from './components/Offerings/Offerings';
 
 export default function Home() {
-  const [theme, setTheme] = useState('dark');
-  const [isExpanded,setIsExpanded]=useState(false);
-
-
+  const [theme, setTheme] = useState('');
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const currentTheme = localStorage.getItem('Theme') || 'light';
@@ -20,6 +19,7 @@ export default function Home() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark');
     }
+    setIsLoading(false); // Finished initial render
   }, []);
 
   useEffect(() => {
@@ -35,20 +35,22 @@ export default function Home() {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
+  if (isLoading) {
+    return <div>...Loading</div>; // or you can render a loading indicator
+  }
+
   return (
     <main className={theme === 'dark' ? 'dark bg-black text-white' : ''}>
       <Navigation theme={themeSwitch} isExpanded={setIsExpanded} />
       
- <div className={`page-content ${isExpanded ? 'hidden' : ''}`}>
-      <HeroSection />
-      <Offerings />
-      <Timeline />
-      <Visions />
-      <Services />
-      <ContactForm />
+      <div className={`page-content ${isExpanded ? 'hidden' : ''}`}>
+        <HeroSection />
+        <Offerings />
+        <Timeline />
+        <Visions />
+        <Services />
+        <ContactForm />
       </div>
-
-      
     </main>
   );
 }
