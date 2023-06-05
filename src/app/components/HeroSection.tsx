@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <div className='md:flex items-center justify-around'>
       <div className='w-1/5'>
-        <h4 key={currentHeading} className='mainhead2 md:text-8xl text-5xl font-bold pt-6'>
+        <h4 key={currentHeading} className='mainhead2 md:text-8xl text-6xl font-bold pt-6'>
           {text[currentHeading]}
         </h4>
       </div>

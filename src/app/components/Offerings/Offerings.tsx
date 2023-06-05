@@ -1,32 +1,39 @@
 import React, { useState, useEffect } from "react";
 import OfferingsDesktop from "./OfferingsDesktop";
 import OfferingsMobile from "./OfferingsMobile";
+import CanvasLoader from "../fallback/CanvasLoader";
 
 const Offerings = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState<number|null>(null);
+  const isMobile = windowWidth && windowWidth <= 768;
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setWindowWidth(window.innerWidth);
     };
 
-    // Add event listener for window resize
+    handleResize(); // Initialize the windowWidth on component mount
+
     window.addEventListener('resize', handleResize);
-
-    // Initial check on component mount
-    handleResize();
-
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  if (isMobile) {
-    return <OfferingsMobile/>
+  if (windowWidth === null) {
+    return <div>Loading...</div>
   }
 
-  return <OfferingsDesktop/>
+  return (
+    <div>
+      {isMobile ? (
+        <OfferingsMobile></OfferingsMobile>
+      ) : (
+        <OfferingsDesktop></OfferingsDesktop>
+      )}
+    </div>
+  );
 };
 
 export default Offerings;
+
