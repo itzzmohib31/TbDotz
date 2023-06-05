@@ -52,7 +52,7 @@ const PlanetModel = () => {
     >
       <Suspense  fallback={<CanvasLoader/>}>
         <OrbitControls
-          autoRotate={false}
+          autoRotate={true}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
