@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { useEffect, useState } from 'react';
+import CanvasLoader from "./fallback/CanvasLoader";
 
 const Earth = () => {
   const earth = useGLTF('./planet/scene.gltf');
@@ -49,7 +50,7 @@ const PlanetModel = () => {
       gl={{ preserveDrawingBuffer: true }}
       camera={{ fov: 45, near: 0.1, far: 100, position: [-4, 3, 6] }}
     >
-      <Suspense>
+      <Suspense  fallback={<CanvasLoader/>}>
         <OrbitControls
           autoRotate={true}
           enableZoom={false}

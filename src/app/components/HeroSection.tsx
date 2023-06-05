@@ -26,7 +26,7 @@ const HeroSection = () => {
           {text[currentHeading]}
         </h4>
       </div>
-      {/* <PlanetModel></PlanetModel> */}
+      <PlanetModel></PlanetModel>
     </div>
   );
 };
