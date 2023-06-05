@@ -1,11 +1,11 @@
+import React, { useState, useEffect } from "react";
 import OfferingsDesktop from "./OfferingsDesktop";
 import OfferingsMobile from "./OfferingsMobile";
-import { useState, useLayoutEffect } from "react";
 
-export const Offerings = () => {
-  const [variant, setVariant] = useState<number>();
+const Offerings = () => {
+  const [variant, setVariant] = useState<number | undefined>(undefined);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       setVariant(window.innerWidth);
     };
